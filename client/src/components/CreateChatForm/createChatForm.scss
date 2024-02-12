@@ -1,0 +1,79 @@
+.create-chat {
+    position: absolute;
+    background-color: #003977;
+    border: 1px solid azure;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 300px;
+    left: 12rem;
+    top: 1rem;
+    img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    &-input {
+        width: 100%;
+        padding: 10px 20px;
+        border: 1px solid azure;
+        border-radius: 10px;
+        color: azure;
+        font-size: 2rem;
+        &::placeholder {
+            color: azure;
+        }
+    }
+    &-buttom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: azure;
+        padding: 0.5rem 0;
+        font-size: 2rem;
+        font-weight: 600;
+        max-width: 300px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #2c67a7;
+        box-shadow:
+            0.3rem 0.3rem 0.4rem azure,
+            -0.5rem -0.2rem 0.4rem #003977;
+        cursor: pointer;
+        transition: all 0.3s linear;
+        &:hover {
+            background-color: azure;
+            box-shadow:
+                0.3rem 0.3rem 0.4rem #367cc8,
+                -0.2rem -2px 0.4rem azure;
+            color: #003977;
+        }
+        &:disabled {
+            background-color: #6e6e6e;
+            box-shadow: none;
+            cursor: inherit;
+            &:hover {
+                background-color: #6e6e6e;
+                box-shadow: none;
+                color: azure;
+            }
+        }
+    }
+    &__error-message {
+        display: flex;
+        width: 100%;
+        padding: 0 10px;
+        color: #ff1212;
+    }
+}

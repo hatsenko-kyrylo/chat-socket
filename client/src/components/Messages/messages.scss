@@ -1,0 +1,73 @@
+.messages {
+    height: 100%;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    padding: 1rem 0 6rem 0;
+    overflow-y: auto;
+    &__item {
+        position: relative;
+        display: flex;
+        margin-left: 1rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: azure;
+        gap: 20px;
+        &-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            &-avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: url('https://images.unsplash.com/photo-1705931622854-081e347b18ad?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+                    0 0 / cover no-repeat;
+            }
+            &-name {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+        }
+        &-message {
+            position: relative;
+            width: fit-content;
+            flex-wrap: wrap;
+            max-width: 500px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+    }
+}
+
+.me {
+    background-color: #003977;
+}
+.otherUser {
+    background-color: #76b8ff;
+}
+.meRight {
+    margin-left: 0;
+    margin-right: 1rem;
+    justify-content: end;
+}
+.system {
+    left: 50%;
+    margin-left: -7rem;
+    background-color: rgb(240, 255, 255, 0.7);
+    justify-content: center;
+    color: #003977;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 12px;
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+}
