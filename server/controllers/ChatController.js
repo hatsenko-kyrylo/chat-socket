@@ -19,13 +19,6 @@ export const getOne = async (req, res) => {
             })
             .exec();
 
-        // const messages = await MessageModel.find({
-        //     chat_id: req.params.chatId,
-        // }).populate({
-        //     path: 'author_id',
-        //     select: 'username avatarUrl',
-        // });
-
         res.json(chat);
     } catch (error) {
         console.error(error);
@@ -93,7 +86,7 @@ export const getAllChats = async (req, res) => {
         res.json(chats);
     } catch (error) {
         res.status(500).json({
-            message: 'Failed to create chat',
+            message: 'Failed to get all chats',
         });
     }
 };
@@ -118,7 +111,7 @@ export const getAllUserChats = async (req, res) => {
         res.json(chats);
     } catch (error) {
         res.status(500).json({
-            message: 'Failed to create chat',
+            message: 'Failed to get all users chats',
         });
     }
 };
@@ -219,7 +212,7 @@ export const removeMessage = async (req, res) => {
         });
     } catch (error) {
         res.status(500).json({
-            message: 'Failed to create chat',
+            message: 'Failed to remove message',
         });
     }
 };

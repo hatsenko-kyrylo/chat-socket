@@ -53,7 +53,9 @@ export const fetchLeaveChat = createAsyncThunk(
 export const fetchRemoveMessage = createAsyncThunk(
     'chats/fetchRemoveMessage',
     async (messageId) => {
-        const { data } = await axios.delete(`/chats/${messageId}`);
+        const { data } = await axios.delete(
+            `/chats/removeMessage/${messageId}`
+        );
         return data;
     }
 );
@@ -68,7 +70,6 @@ const initialState = {
             users: [],
             messages: [],
         },
-        // messages: [],
         status: 'loading',
     },
     allChats: {
@@ -97,6 +98,12 @@ const chatsSlice = createSlice({
                 (message) => message._id !== action.payload
             );
             state.activeChat.chat.messages = filteredMessages;
+        },
+        setAllUserChats: (state, action) => {
+            const filteredUsersChats = state.userChats.items.filter((item) => {
+                return item._id !== action.payload;
+            });
+            state.userChats.items = filteredUsersChats;
         },
     },
     extraReducers: (builder) => {
@@ -143,7 +150,12 @@ const chatsSlice = createSlice({
     },
 });
 
-export const { setSearchValue, setCreateChat, setMessages, removeMessage } =
-    chatsSlice.actions;
+export const {
+    setSearchValue,
+    setCreateChat,
+    setMessages,
+    removeMessage,
+    setAllUserChats,
+} = chatsSlice.actions;
 
 export default chatsSlice.reducer;

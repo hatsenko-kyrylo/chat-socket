@@ -3,11 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-    fetchAllUserChats,
     fetchSendMessage,
     fetchUserChat,
     setMessages,
     fetchLeaveChat,
+    setAllUserChats,
 } from '../../redux/slices/chats';
 import { authData, selectedAuth } from '../../redux/slices/auth';
 import socket from '../../utils/socket';
@@ -85,7 +85,7 @@ const Chat = () => {
 
         if (confirmLeave) {
             dispatch(fetchLeaveChat(chatId));
-            dispatch(fetchAllUserChats());
+            dispatch(setAllUserChats(chatId));
             navigate('/chats');
         }
     };

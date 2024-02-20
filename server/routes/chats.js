@@ -21,7 +21,7 @@ router.get('/', checkAuth, getAllUserChats);
 router.get('/:chatId', checkAuth, getOne);
 router.post('/', checkAuth, chatCreateValidation, create);
 router.patch('/:chatId', checkAuth, joinChat);
-router.delete('/:messageId', checkAuth, removeMessage);
+router.delete('/removeMessage/:messageId', checkAuth, removeMessage);
 router.delete('/:chatId', checkAuth, leaveChat);
 router.post('/:chatId', checkAuth, sendMessage);
 

@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { gsap } from 'gsap';
 
 import { fetchJoinChat, fetchAllChats } from '../../redux/slices/chats';
-
 import plus from '../../images/icons/plus.svg';
 import chechMark from '../../images/icons/check-mark-light.svg';
 import './joinButton.scss';
